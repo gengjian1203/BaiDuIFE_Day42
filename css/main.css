@@ -1,0 +1,55 @@
+html, body, div, h1, h2, h3, h4, h5, h6, button, input, ul, ol, li, table, tr, td, p {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 1em;
+    margin: 2px auto;
+}
+
+#state {
+    width: 800px;
+    height: 200px;
+
+    border: 4px solid #000000;
+    border-radius: 10px;
+
+    margin: 2px auto;
+}
+
+#restaurant {
+    width: 800px;
+    height: 300px;
+
+    border: 4px solid #000000;
+    border-radius: 10px;
+
+    margin: 0px auto;
+}
+
+#kitchen {
+    width: 100%;
+    height: 100px;
+
+    background: cornflowerblue;
+
+}
+
+#hall {
+    width: 100%;
+    height: 200px;
+
+    background: yellowgreen;
+}
+
+#outside {
+    width: 808px;
+    height: 150px;
+
+    background: #cccccc;
+    border-radius: 10px;
+
+    margin: 2px auto;
+}

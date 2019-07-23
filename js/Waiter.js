@@ -3,14 +3,23 @@ class Waiter extends Worker {
         super(name, salary);
     }
 
-    doWork(para) {
-        if ( Object.prototype.toString.call(para) == "[object Array]" ) {
-            // 是数组、记录客人点菜
-            console.log(this.name + "记录客人点菜");
-        } else {
-            // 不是数组、上菜行为
-            console.log(this.name + "上菜行为");
+    doWork(nIndex) {
+        // if ( Object.prototype.toString.call(para) == "[object Array]" ) {
+        // 记录客人点菜
+        console.log("服务员：" + this.name + " 记录客人点菜:" + Menu.getInstance().list[nIndex].name + "，将菜式告知后厨");
+        var arrCooking = [nIndex, 1];
+        _queueCooking.push(arrCooking);
+    }
+
+    sendCooking() {
+        Restaurant.getInstance().arrIn[0].eating();
+    }
+
+    static getInstance(name, salary) {
+        if (!this.instance) {
+            this.instance = new Waiter(name, salary);
         }
+        return this.instance;
     }
 
 }

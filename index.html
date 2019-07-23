@@ -2,17 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>
-
-        </title>
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <title>百度前端技术学院 开一家餐厅吧</title>
     </head>
     <body>
+        <h1>一家餐厅</h1>
+        <div id="state">
+            当前资金：<div id="cash"></div>
+            当前座位：<div id="seats"></div>
+            当前员工：<div id="staff"></div>
+            当前菜单：<div id="menu"></div>
+        </div>
+        <div id="restaurant">
+            <div id="kitchen">
+
+            </div>
+            <div id="hall">
+                就餐客人：<div id="arrIn"></div>
+            </div>
+        </div>
+        <div id="outside">
+            等待客人：<div id="queueOut"></div>
+        </div>
+
         <script src="js/global.js"></script>
         <script src="js/Meal.js"></script>
+        <script src="js/Menu.js"></script>
         <script src="js/Worker.js"></script>
         <script src="js/Waiter.js"></script>
         <script src="js/Cook.js"></script>
         <script src="js/Customer.js"></script>
         <script src="js/Restaurant.js"></script>
+        <script src="js/world.js"></script>
     </body>
 </html>
