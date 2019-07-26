@@ -2,11 +2,21 @@ class Restaurant {
     constructor(arrData) {
         this.cash = arrData["cash"];
         this.seats = arrData["seats"];
-        this.staff = arrData["staff"];
+        this.staffCook = arrData["staffCook"];
+        this.staffWaiter = arrData["staffWaiter"];
+        this.nOut = arrData["nOut"];
+
+        // 店外队列
         this.queueOut = [];
+        // 屋内情况
         this.arrIn = [];
+        // 座位
         for (var i = 0; i < this.seats; i++) {
             this.arrIn.push("空座");
+        }
+        // 座位完菜队列
+        for (var i = 0; i < this.seats; i++) {
+            _queueSeatCook.push([]);
         }
     }
     // 单例模式
@@ -18,14 +28,29 @@ class Restaurant {
     }
 
     // 雇佣
-    hire(person) {
-        this.staff.push(person);
+    hireCook(person) {
+        this.staffCook.push(person);
     }
+
+    hireWaiter(person) {
+        this.staffWaiter.push(person);
+    }
+
     // 解雇
-    fire(person) {
-        for (var index in this.staff) {
-            if (this.staff[index].id == person.id) {
-                this.staff.splice(index, 1);
+    fireCook(person) {
+        for (var index in this.staffCook) {
+            if (this.staffCook[index].id == person.id) {
+                this.staffCook.splice(index, 1);
+                break;
+            }
+        }
+    }
+
+    // 解雇
+    fireWaiter(person) {
+        for (var index in this.staffWaiter) {
+            if (this.staffWaiter[index].id == person.id) {
+                this.staffWaiter.splice(index, 1);
                 break;
             }
         }
@@ -37,10 +62,15 @@ class Restaurant {
         if (index != -1) {
             // 如果店铺有空位，则直接入座
             this.arrIn[index] = person;
-            person.orderDishes();
+            person.nSeat = index;
+            person.waitDishes();
         } else {
             // 店外排队
-            this.queueOut.push(person);
+            if (this.queueOut.length < this.nOut) {
+                this.queueOut.push(person);
+            } else {
+                // delete person;
+            }
         }
     }
 
@@ -50,8 +80,11 @@ class Restaurant {
         if (index != -1) {
             // 如果店铺有空位，则队伍第一个人入座用餐
             var person = this.queueOut.shift()
-            this.arrIn[index] = person;
-            person.orderDishes();
+            if (person != null) {
+                this.arrIn[index] = person;
+                person.nSeat = index;
+                person.waitDishes();
+            }
         }
     }
 

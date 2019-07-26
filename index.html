@@ -8,24 +8,42 @@
     <body>
         <h1>一家餐厅</h1>
         <div id="state">
-            当前资金：<div id="cash"></div>
-            当前座位：<div id="seats"></div>
-            当前员工：<div id="staff"></div>
-            当前菜单：<div id="menu"></div>
+            <div id="data">
+                当前资金：
+                <div id="cash"></div>
+                当前座位：
+                <div id="seats"></div>
+                等候座位：
+                <div id="nOut"></div>
+                当前员工：
+                <div id="staff_cook">
+                    厨师：
+                </div>
+                <div id="staff_waiter">
+                    服务生：
+                </div>  
+            </div>
+            <div id="menu">
+                <!-- 当前菜单：<div id="menu"></div> -->
+            </div>
         </div>
         <div id="restaurant">
             <div id="kitchen">
 
             </div>
+            <div id="waiterRoom">
+
+            </div>
             <div id="hall">
-                就餐客人：<div id="arrIn"></div>
+                <!-- 就餐客人：<div id="arrIn"></div> -->
             </div>
         </div>
         <div id="outside">
-            等待客人：<div id="queueOut"></div>
+            <!-- 等待客人：<div id="queueOut"></div> -->
         </div>
 
         <script src="js/global.js"></script>
+        <script src="js/event.js"></script>
         <script src="js/Meal.js"></script>
         <script src="js/Menu.js"></script>
         <script src="js/Worker.js"></script>

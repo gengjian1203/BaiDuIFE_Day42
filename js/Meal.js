@@ -3,5 +3,6 @@ class Meal {
         this.name = arrData.name;
         this.cost = arrData.cost;
         this.price = arrData.price;
+        this.time = arrData.time;
     }
 }

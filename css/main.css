@@ -3,6 +3,11 @@ html, body, div, h1, h2, h3, h4, h5, h6, button, input, ul, ol, li, table, tr, t
     padding: 0px;
 }
 
+body {
+
+    font-size: 0.8em;
+}
+
 h1 {
     text-align: center;
     font-size: 1em;
@@ -10,13 +15,30 @@ h1 {
 }
 
 #state {
-    width: 800px;
-    height: 200px;
+    width: 790px;
+    height: 250px;
 
     border: 4px solid #000000;
     border-radius: 10px;
 
     margin: 2px auto;
+    padding: 5px 5px;
+}
+#state #data {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+#state #menu {
+    float: left;
+    width: 49%;
+    height: 100%;
+
+    font-size: 0.8em;
+    text-align: center;
+
+    border-left: 1px solid #000000;
 }
 
 #restaurant {
@@ -30,26 +52,39 @@ h1 {
 }
 
 #kitchen {
-    width: 100%;
-    height: 100px;
+    width: calc(100% - 10px);
+    height: 90px;
 
     background: cornflowerblue;
 
+    padding: 5px 5px;
+}
+
+#waiterRoom {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+
+    background-color: blue;
 }
 
 #hall {
-    width: 100%;
-    height: 200px;
+    width: calc(100% - 128px);
+    height: 195px;
+
+    padding-top: 5px;
+    padding-left: 128px;
 
     background: yellowgreen;
 }
 
 #outside {
-    width: 808px;
-    height: 150px;
+    width: 798px;
+    height: 400px;
 
     background: #cccccc;
     border-radius: 10px;
 
     margin: 2px auto;
+    padding: 5px 5px;
 }
